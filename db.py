@@ -13,8 +13,10 @@ users = sqlalchemy.Table(
 metadata,
 sqlalchemy.Column("id", sqlalchemy.Integer,
 primary_key=True),
-sqlalchemy.Column("name", sqlalchemy.String(32)),
+sqlalchemy.Column("firstname", sqlalchemy.String(32)),
+sqlalchemy.Column("lastname", sqlalchemy.String(32)),
 sqlalchemy.Column("email", sqlalchemy.String(128)),
+sqlalchemy.Column("password", sqlalchemy.String(128))
 )
 
 metadata.create_all(engine)
