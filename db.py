@@ -36,7 +36,7 @@ products = sqlalchemy.Table(
 metadata,
 sqlalchemy.Column("id", sqlalchemy.Integer,
 primary_key=True),
-sqlalchemy.Column("name_product", sqlalchemy.Date),
+sqlalchemy.Column("name_product", sqlalchemy.String(128)),
 sqlalchemy.Column("properties", sqlalchemy.String(128)),
 sqlalchemy.Column("price", sqlalchemy.Float),
 )
