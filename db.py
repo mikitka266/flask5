@@ -18,6 +18,20 @@ sqlalchemy.Column("email", sqlalchemy.String(128)),
 sqlalchemy.Column("password", sqlalchemy.String(128))
 )
 
+orders = sqlalchemy.Table(
+"orders",
+metadata,
+sqlalchemy.Column("id", sqlalchemy.Integer,
+primary_key=True),
+sqlalchemy.Column("id_user", sqlalchemy.Integer,
+foreign_key=True),
+sqlalchemy.Column("id_product", sqlalchemy.Integer,
+foreign_key=True),
+sqlalchemy.Column("date_order", sqlalchemy.Date),
+sqlalchemy.Column("status", sqlalchemy.String(32)),
+)
+
+
 engine  = sqlalchemy.create_engine(DATABASE_URL,
                                   connect_args={'check same thread': False})
 
