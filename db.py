@@ -31,6 +31,16 @@ sqlalchemy.Column("date_order", sqlalchemy.Date),
 sqlalchemy.Column("status", sqlalchemy.String(32)),
 )
 
+products = sqlalchemy.Table(
+"products",
+metadata,
+sqlalchemy.Column("id", sqlalchemy.Integer,
+primary_key=True),
+sqlalchemy.Column("name_product", sqlalchemy.Date),
+sqlalchemy.Column("properties", sqlalchemy.String(128)),
+sqlalchemy.Column("price", sqlalchemy.Float),
+)
+
 
 engine  = sqlalchemy.create_engine(DATABASE_URL,
                                   connect_args={'check same thread': False})
