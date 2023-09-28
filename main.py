@@ -17,6 +17,9 @@ async def shutdown():
 
 app.include_router(user.router, tags=['users'])
 
+app.include_router(user.router, tags=['orders'])
+app.include_router(user.router, tags=['products'])
+
 
 
 if __name__ == '__main__':
